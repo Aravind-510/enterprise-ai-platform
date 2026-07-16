@@ -1,0 +1,21 @@
+{
+  "58c7e2f8-66da-4811-a1a3-9451be617c8f": {
+    "created": 1784224614.3065636,
+    "updated": 1784224614.3089504,
+    "history": [
+      {
+        "question": "My department is HR.",
+        "answer": "Preference stored.",
+        "time": 1784224614.3082578
+      },
+      {
+        "question": "Show policies.",
+        "answer": "Showing HR policies.",
+        "time": 1784224614.3089478
+      }
+    ],
+    "preferences": {
+      "department": "HR"
+    }
+  }
+}
