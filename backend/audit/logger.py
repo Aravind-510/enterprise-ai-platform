@@ -1,26 +1,21 @@
 from datetime import datetime
+from database.database import SessionLocal
+from database.models import AuditLog
 
 
-def audit_log(
-    user,
-    endpoint,
-    action,
-    status,
-    ip
-):
+def audit_log(user_id, endpoint, action, status, ip):
 
-    print({
+    db = SessionLocal()
 
-        "timestamp": datetime.utcnow(),
+    log = AuditLog(
+        user_id=user_id,
+        endpoint=endpoint,
+        action=action,
+        status=status,
+        ip_address=ip,
+        timestamp=datetime.utcnow()
+    )
 
-        "user": user,
-
-        "endpoint": endpoint,
-
-        "action": action,
-
-        "status": status,
-
-        "ip": ip
-
-    })
+    db.add(log)
+    db.commit()
+    db.close()
